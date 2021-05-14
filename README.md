@@ -30,38 +30,13 @@ The Eclipse SDCC environment with the setup [described in our wiki](../../wiki/S
 * __-d \<filename\>__ Write the content of a file to data flash
 * __-h__ Display help message
 
-For Linux Users
+For macOS Users
 ----------
 
+* libusb install `brew install libusb`
 * Build: Type `make` in `usbisp` directory.
 * Install:Type `make install` in `usbisp` directory, you can also pass DESTDIR to the script to set installation path. 
 * Linux does not require a specific driver for this program.
-
-For Windows Users
-----------
-* The Tool pack for Windows is available [here](../../wiki/win_tools.zip).
-* The wiki page "[Setup SDCC developing environment with Eclipse](../../wiki/Setup-SDCC-developing-environment-with-Eclipse)" demonstrates how to setup an IDE for better code editing.
-* On Windows, CH554 ISP mode requires a libusb driver implementation to enable direct device access for librech551.
-
-__Driver Installation__
-
-1. Connect your CH55x to one of USB ports on your PC, make sure the MCU enters ISP mode.
-2. Launch zadig (included in [`win_tools.zip`](../../wiki/win_tools.zip)), open `Options` menu and click `List All Devices`, 
-you should be able to find your CH55x (Usually names `USB Module`), optionally you can change its name by check the `Edit` box. 
-3. Double check that the USB ID is correct, USB ID is VID plus PID, for CH554, the USB ID is `4348 55E0`.
-4. Select `libusb-win32` and click `Install Driver`, quit Zadig after driver installation.
-* Note: due to unknown reason, sometimes the `libusbK` driver won't work on some machine with very new USB 3.1 controller. 
-If your PC can not recognize the USB ISP device, try `winusb` or `libusb-win32` instead.
-
-__Build Executables__
-* Generate EXE file for Microsoft Windows requires __Microsoft Visual Studio 2017__ and __Windows Kits 10.0.15063.0 or above__.
-If your system does not meet the stated requirement, go to Microsoft's website and download the installer for __Microsoft Visual Studio 2017 Community Version__.
-* It is possible to compile the source with legacy Visual Studio although it is not officially supported.
-1. Download the entire repository and unzip to anywhere you like
-2. Navigate to `msvc` folder and create a folder called `libusb` under `msvc` directory
-3. Go to <https://github.com/libusb/libusb/releases> to get the latest __stable__ binary snapshots of libusb(e.g. [libusb v1.0.21](https://github.com/libusb/libusb/releases/tag/v1.0.21)), download the file with extension `7z` or `tar.bz`, then unzip it to `msvc\libusb`. Now your `msvc\libusb` should contain at least these folders : `MS32`, `MS64` and `include`
-4. Launch `msvc\librech551.sln` and choose your targeting platform (e.g. Release x64), then start compiling.
-* (Windows version only) To remove VC runtime dependency, releases on Github release page is built on Visual C++ together with [`VC-LTL`](https://github.com/Chuyu-Team/VC-LTL).
 
 License
 ----------
