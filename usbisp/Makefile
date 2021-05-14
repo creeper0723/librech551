@@ -1,4 +1,4 @@
-DESTDIR := /usr/local
+DESTDIR := /usr/local/bin
 CC := clang
 CFLAGS := -O2
 
@@ -12,5 +12,5 @@ clean:
 	rm -f wchisptool
 
 install: wchisptool
-	cp wchisptool $(DESTDIR)/bin
+	cp wchisptool $(DESTDIR)/wchisptool
 
