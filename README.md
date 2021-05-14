@@ -35,7 +35,7 @@ For macOS Users
 
 * libusb install `brew install libusb`
 * Build: Type `make` in `usbisp` directory.
-* Install:Type `make install` in `usbisp` directory, you can also pass DESTDIR to the script to set installation path. 
+* Install:Type `sudo make install` in `usbisp` directory, you can also pass DESTDIR to the script to set installation path. 
 * Linux does not require a specific driver for this program.
 
 License
